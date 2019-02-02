@@ -2,6 +2,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
     path = require('path');
+    vision = require('@google-cloud/vision');
     app = express();
 
 
@@ -22,9 +23,23 @@ mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iw
 });
 var db = mongoose.connection;
 
+const image = './public/images/chow.jpg';
+// configure vision api
+var visionClient = new vision.ImageAnnotatorClient();
+
+// LABEL DETECTION
+visionClient.labelDetection(image).then(results => {
+    const labels=results[0].labelAnnotations;
+    labels.forEach(label => {console.log(label.description);
+    console.log(label.score);
+    });
+}).catch(err => {
+    console.error("ERROR: ", err);
+})
+
 // home test route
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.send("toby is hot");
 })
 
 // start server
