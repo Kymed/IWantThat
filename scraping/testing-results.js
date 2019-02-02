@@ -102,9 +102,9 @@ function createAdCardContent(ad) {
     html: ad.title
   })
 
-  let $description = $("<p>", {
-    "class": "card-text",
-    html: ad.description
+  let $price = $("<p>", {
+    "class": "card-text price",
+    html: "Price: $" + ad.price
   })
 
   let $date = $("<p>", {
@@ -120,29 +120,33 @@ function createAdCardContent(ad) {
     html: "See Post on Kajiji"
   }))
 
-  return [$title, $description, $date, $seePost]
+  return [$title, $price, $date, $seePost]
 }
-
 
 
 let ad1 = {
-  "title": "Title 1",
-  "description": "My Description",
-  "date": "Some Date",
-  "images": ["https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg",
-            "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"],
-  "attributes": {},
-  "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
+ title: 'Two black peterbald kittens with hair, phenotype oriental',
+ url: 'https://www.kijiji.ca/v-cats-kittens/city-of-toronto/two-black-peterbald-kittens-with-hair-phenotype-oriental/1388589330',
+ price: 1300,
+ images: [ 'https://i.ebayimg.com/00/s/Njg3WDgwMA==/z/FD0AAOSwhJFbtl-S/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/suoAAOSw76JcIkSp/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/OQcAAOSwhspcIkQC/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDc0NA==/z/vssAAOSwQfRcSdUK/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDQ5OQ==/z/ECgAAOSw8zRcSdTn/$_57.JPG',
+    'https://i.ebayimg.com/00/s/NTYzWDgwMA==/z/XfcAAOSw6~Vbtl-s/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/quwAAOSwUQ5btl-l/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/2hYAAOSwXAxcIkMy/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/ItoAAOSweX5cIkb6/$_57.JPG',
+    'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/VloAAOSw2pBcIkNR/$_57.JPG' ]
 }
 
 let ad2 = {
-  "title": "Title 2",
-  "description": "My Other Description",
+  title: "Title 2",
+  price: 100,
   "date": "Some Other Date",
   "images": ["https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
             "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg"],
-  "attributes": {},
-  "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
+  "url": "https://www.kijiji.ca/v-cats-kittens/city-of-toronto/two-black-peterbald-kittens-with-hair-phenotype-oriental/1388589330"
 }
 
 $(document).ready(function() {
