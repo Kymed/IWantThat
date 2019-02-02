@@ -109,7 +109,7 @@ function createAdCardContent(ad) {
 
   let $date = $("<p>", {
     "class": "small",
-    html: ad.date
+    html: "Date posted: " + ad.date
   })
 
   let $seePost = $("<a>", {

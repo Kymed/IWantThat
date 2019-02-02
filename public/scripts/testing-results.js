@@ -109,7 +109,7 @@ function createAdCardContent(ad) {
 
   let $date = $("<p>", {
     "class": "small",
-    html: ad.date
+    html: "Date posted: " + ad.date
   })
 
   let $seePost = $("<a>", {
@@ -128,6 +128,7 @@ let ad1 = {
  title: 'Two black peterbald kittens with hair, phenotype oriental',
  url: 'https://www.kijiji.ca/v-cats-kittens/city-of-toronto/two-black-peterbald-kittens-with-hair-phenotype-oriental/1388589330',
  price: 1300,
+ date: "Some date",
  images: [ 'https://i.ebayimg.com/00/s/Njg3WDgwMA==/z/FD0AAOSwhJFbtl-S/$_57.JPG',
     'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/suoAAOSw76JcIkSp/$_57.JPG',
     'https://i.ebayimg.com/00/s/ODAwWDYwMA==/z/OQcAAOSwhspcIkQC/$_57.JPG',
@@ -143,10 +144,10 @@ let ad1 = {
 let ad2 = {
   title: "Title 2",
   price: 100,
-  "date": "Some Other Date",
-  "images": ["https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
+  date: "Some Other Date",
+  images: ["https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
             "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg"],
-  "url": "https://www.kijiji.ca/v-cats-kittens/city-of-toronto/two-black-peterbald-kittens-with-hair-phenotype-oriental/1388589330"
+  url: "https://www.kijiji.ca/v-cats-kittens/city-of-toronto/two-black-peterbald-kittens-with-hair-phenotype-oriental/1388589330"
 }
 
 $(document).ready(function() {
