@@ -16,10 +16,18 @@
 
 .btn-up {
   margin-top: 20px;
-  width: 50%;
+  width: 300px;
 }
 
 .subtitle {
   margin: 10px;
   font-size: 30px;
+}
+
+.carousel {
+}
+
+#mainRegionSelecter{
+  margin-top: 20px;
+  width: 300px;
 }
