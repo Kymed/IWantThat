@@ -14,10 +14,6 @@
   padding: 2rem;
 }
 
-.card {
-  min-height:500px;
-}
-
 .btn-up {
   margin-top: 20px;
   width: 300px;
@@ -28,10 +24,17 @@
   font-size: 30px;
 }
 
-.carousel {
-}
-
 #mainRegionSelecter{
   margin-top: 20px;
   width: 300px;
+}
+
+/* Extend Bootstrap cards */
+.card {
+  margin-bottom: 16px;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.15)
+}
+
+.card-body {
+  padding: 10px;
 }
