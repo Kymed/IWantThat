@@ -5,6 +5,7 @@ var express = require('express'),
     multer = require('multer');
     fs = require('fs');
     app = express();
+    //appRouter = require('./routes');
 
 
 // configure views
@@ -17,17 +18,6 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
-var storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './public/images')
-    }, filename: (req, file, cb) => {
-        //cb(null, "image" + path.extname(file.originalname));
-        cb(null, file.originalname);
-    }
-});
-var upload = multer({
-    storage: storage
-});
 
 // configure database
 mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iwantthat', {
@@ -35,9 +25,25 @@ mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iw
 });
 var db = mongoose.connection;
 
+//configure multer
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, '../public/images')
+    }, filename: (req, file, cb) => {
+        //cb(null, "image" + path.extname(file.originalname));
+        cb(null, file.originalname);
+    }
+});
+
+var upload = multer({
+    storage: storage
+});
+
+
+// Add routes
 // home test route
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('index');
 });
 
 
@@ -49,6 +55,21 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         res.send('file not uploaded');
     }
 });
+
+// Import controllers
+/*router = express.Router();
+var vision = require('./controllers/visionController')
+var scraper = require('./controllers/kijiji_scrape');
+var fileSys = require('./controllers/filesystem');
+var interface = require('./controllers/interfaceController');
+
+// Create GET Requests
+router.get('/', interface.home);
+
+// Create POST Requests
+router.post('/uploadImage', fileSys.uploadImage)
+
+app.use('/', router);*/
 
 // start server
 app.listen(3000, () => console.log("listening"));

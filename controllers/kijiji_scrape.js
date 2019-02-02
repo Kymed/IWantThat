@@ -39,7 +39,7 @@ function callback(err, ads) {
                 "price":  ads[i].attributes["price"],
                 "images": ads[i].images,
                 }
-                console.log(res);
+                //console.log(res);
             }
         }
     }

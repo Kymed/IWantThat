@@ -1,6 +1,5 @@
 var path = require('path');
 var vision = vision = require('@google-cloud/vision');
-var request = require('request');
 var visionClient = new vision.ImageAnnotatorClient();
 
 
@@ -24,9 +23,7 @@ exports.detectAnimal = (imgPath) => {
 
         });
         
-        request('/chooseLabel', function (err, res, body) {
-            if(err) {console.log(err);};
-        })
+        return labelNames;
         
     }).catch(err => {
         console.error("ERROR: ", err);
