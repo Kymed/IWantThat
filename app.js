@@ -35,6 +35,7 @@ mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iw
 });
 var db = mongoose.connection;
 
+<<<<<<< HEAD
 // home test route
 app.get('/', (req, res) => {
     res.render('home');
@@ -50,5 +51,7 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
     }
 });
 
+=======
+>>>>>>> 003e4b9405c3e20ed7c2636ed269a68467dbcdad
 // start server
 app.listen(3000, () => console.log("listening"));
