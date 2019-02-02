@@ -102,9 +102,9 @@ function createAdCardContent(ad) {
     html: ad.title
   })
 
-  let $description = $("<p>", {
-    "class": "card-text",
-    html: ad.description
+  let $price = $("<p>", {
+    "class": "card-text price",
+    html: "Price: $" + ad.price
   })
 
   let $date = $("<p>", {
@@ -120,5 +120,5 @@ function createAdCardContent(ad) {
     html: "See Post on Kajiji"
   }))
 
-  return [$title, $description, $date, $seePost]
+  return [$title, $price, $date, $seePost]
 }
