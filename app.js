@@ -25,7 +25,7 @@ var db = mongoose.connection;
 // home test route
 app.get('/', (req, res) => {
     dummy = ["Boston Terrior", "Chow Chow", "Welsh Corgi"];
-    res.render('results.ejs', {labels: dummy});
+    res.render('labels.ejs', {labels: dummy});
 })
 
 // start server

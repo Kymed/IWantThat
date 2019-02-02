@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     if (file) {
       reader.readAsDataURL(file);
+      console.log("VALID FILE");
     }
 
     return false; // Disable default form functionality
