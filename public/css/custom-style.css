@@ -1,4 +1,25 @@
+.jumbotron {
+  background-image: url("http://lorempixel.com/1600/600/city");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom-center;
+  padding: 5rem 0;
+}
+.mastinfo{
+  background-color: rgba(255,255,255,0.85);
+  padding: 2rem;
+}
+
+.card {
+  min-height:500px;
+}
+
 .btn-up {
-  margin-top: 4px;
+  margin-top: 20px;
   width: 50%;
+}
+
+.subtitle {
+  margin: 10px;
+  font-size: 30px;
 }
