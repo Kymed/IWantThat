@@ -1,0 +1,40 @@
+.price {
+  color: green;
+}
+
+.jumbotron {
+  background-image: url("http://lorempixel.com/1600/600/city");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom-center;
+  padding: 5rem 0;
+}
+.mastinfo{
+  background-color: rgba(255,255,255,0.85);
+  padding: 2rem;
+}
+
+.btn-up {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.subtitle {
+  margin: 10px;
+  font-size: 30px;
+}
+
+#mainRegionSelecter{
+  margin-top: 20px;
+  width: 300px;
+}
+
+/* Extend Bootstrap cards */
+.card {
+  margin-bottom: 16px;
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.15)
+}
+
+.card-body {
+  padding: 10px;
+}
