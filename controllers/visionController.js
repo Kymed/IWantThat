@@ -4,6 +4,7 @@ var visionClient = new vision.ImageAnnotatorClient();
 
 
 exports.detectAnimal = (imgPath) => {
+    let labelNames = [];
     const image = imgPath;
     visionClient.labelDetection(imgPath).then(results => {
 
@@ -11,9 +12,7 @@ exports.detectAnimal = (imgPath) => {
         let ignoreLabels = ["Companion Dog", "Carnivore", "Snout", "Canidae",
         "Dog breed", "Vertebrate", "Mammal", "Canidae", "Black", "Maroon", "Green", "Olive",
         "Navy", "Purple", "Teal", "Silver", "Gray", "Red", "Lime", "Yellow",
-        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds"]
-
-        let labelNames = [];
+        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds"];
 
         labels.forEach(label => {
 
@@ -22,12 +21,11 @@ exports.detectAnimal = (imgPath) => {
             };
 
         });
-        
-        return labelNames;
+
+
+        //return labelNames;
         
     }).catch(err => {
         console.error("ERROR: ", err);
     })
 }
-
-exports.req

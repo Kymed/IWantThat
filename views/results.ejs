@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Results</title>
-  </head>
-  <body>
-    <div id="results" class="col-sm-6 offset-3">
-    </div>
-  </body>
-  <script src="../public/scripts/displaying-results.js">
-  var ads = <%=ads%>;
-  displayAds(ads);
-  </script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Main</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/custom-style.css">
+
+  <!-- bootstrap, jquery, js styling references -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div id="results" class="col-sm-6 offset-3">
+  <h1>Results </h1> 1
+  </div>
+</body>
+<!--<script src="/scripts/displaying-results.js"></script>
+<script type="text/javascript">
+  console.log("YA MOTHA FUCKING YEET");
+  $(document).ready(function() {
+    var ads = [%= results %>]
+    console.log(ads); 
+    displayAds(ads);
+  });
+  </script>-->
+<% for (i = 0; i < results.length; i++) { %>
+  <h2> <%=results[i].title %> </h2>
+<% } %>
 </html>

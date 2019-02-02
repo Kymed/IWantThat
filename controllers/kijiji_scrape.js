@@ -3,7 +3,6 @@ const kijiji = require("kijiji-scraper");
 let options = {
     minResults: 6,
     scrapeResultDetails: true,
-
 };
 
 
@@ -18,7 +17,7 @@ const Peterborough_Area = 1700217;
 const Toronto_GTA = 1700272;
 
  
-let params = {
+var params = {
     locationId: Toronto_GTA,  // Same as kijiji.locations.ONTARIO.OTTAWA_GATINEAU_AREA.OTTAWA
     categoryId: pet_Category,  // Same as kijiji.categories.CARS_AND_VEHICLES
     sortByName: "priceAsc",  // Show the cheapest listings first
@@ -44,6 +43,13 @@ function callback(err, ads) {
         }
     }
 }
-kijiji.search(params, options, callback);
+
+exports.search = (keyword, min, max) => {
+    params['keywords'] = keyword;
+    params['minPrice'] = min;
+    params['maxPrice'] = max;
+    searchResults = kijiji.search(params,options,callback);
+    return kijiji.search(params, options, callback);
+};
 
 
