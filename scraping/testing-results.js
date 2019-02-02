@@ -101,10 +101,13 @@ function createAdCardContent(ad) {
   let $seePost = $("<a>", {
     href: ad.url
   })
+  $seePost.append($("<button>", {
+    "class": "btn btn-primary",
+    html: "See Post on Kajiji"
+  }))
 
   return [$title, $description, $date, $seePost]
 }
-
 
 
 
