@@ -2,7 +2,8 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
     path = require('path');
-    vision = require('@google-cloud/vision');
+    multer = require('multer');
+    fs = require('fs');
     app = express();
 
 
@@ -16,6 +17,17 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/images')
+    }, filename: (req, file, cb) => {
+        //cb(null, "image" + path.extname(file.originalname));
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({
+    storage: storage
+});
 
 // configure database
 mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iwantthat', {
@@ -23,24 +35,20 @@ mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iw
 });
 var db = mongoose.connection;
 
-const image = './public/images/chow.jpg';
-// configure vision api
-var visionClient = new vision.ImageAnnotatorClient();
-
-// LABEL DETECTION
-visionClient.labelDetection(image).then(results => {
-    const labels=results[0].labelAnnotations;
-    labels.forEach(label => {console.log(label.description);
-    console.log(label.score);
-    });
-}).catch(err => {
-    console.error("ERROR: ", err);
-})
-
 // home test route
 app.get('/', (req, res) => {
-    res.send("toby is hot");
-})
+    res.render('home');
+});
+
+
+// post request for image
+app.post('/uploadImage', upload.single('image'), (req, res) => {
+    if (req.file) {
+        res.send('file uploaded');
+    } else {
+        res.send('file not uploaded');
+    }
+});
 
 // start server
 app.listen(3000, () => console.log("listening"));

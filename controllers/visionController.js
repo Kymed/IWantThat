@@ -27,6 +27,7 @@ exports.detectAnimal = (imgPath) => {
         request('/chooseLabel', function (err, res, body) {
             if(err) {console.log(err);};
         })
+        
     }).catch(err => {
         console.error("ERROR: ", err);
     })
