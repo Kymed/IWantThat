@@ -102,14 +102,14 @@ function createAdCardContent(ad) {
     html: ad.title
   })
 
-  let $description = $("<p>", {
-    "class": "card-text",
-    html: ad.description
+  let $price = $("<p>", {
+    "class": "card-text price",
+    html: "Price: $" + ad.price
   })
 
   let $date = $("<p>", {
     "class": "small",
-    html: ad.date
+    html: "Date posted: " + ad.date
   })
 
   let $seePost = $("<a>", {
@@ -120,31 +120,5 @@ function createAdCardContent(ad) {
     html: "See Post on Kajiji"
   }))
 
-  return [$title, $description, $date, $seePost]
+  return [$title, $price, $date, $seePost]
 }
-
-
-
-let ad1 = {
-  "title": "Title 1",
-  "description": "My Description",
-  "date": "Some Date",
-  "images": ["https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg",
-            "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"],
-  "attributes": {},
-  "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
-}
-
-let ad2 = {
-  "title": "Title 2",
-  "description": "My Other Description",
-  "date": "Some Other Date",
-  "images": ["https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
-            "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg"],
-  "attributes": {},
-  "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
-}
-
-$(document).ready(function() {
-  displayAds([ad1, ad2]);
-})
