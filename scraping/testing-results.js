@@ -54,21 +54,35 @@ function createCarousel(carouselItems) {
     id: carouselId,
   })
 
-  let carouselLeft = $("<a>", {
+  let carouselPrev = $("<a>", {
     "class": "carousel-control-prev",
     role: "button",
     "data-slide": "prev",
     href: "#"+carouselId,
-    html: '<span class="carousel-control-prev-icon" aria-hidden: "true"></span><span class="sr-only">Previous</span>'
   })
+  carouselPrev.append($("<span>", {
+    "class": "carousel-control-prev-icon",
+    "aria-hidden": "true"
+  }))
+  carouselPrev.append($("<span>", {
+    "class": "sr-only",
+    html: "Previous"
+  }))
 
-  let carouselRight = $("<a>", {
+  let carouselNext = $("<a>", {
     "class": "carousel-control-next",
     role: "button",
     "data-slide": "next",
-    href: "#"+carouselId,
-    html: '<span class="carousel-control-next-icon" aria-hidden: "true"></span><span class="sr-only">Next</span>'
+    href: "#"+carouselId
   })
+  carouselNext.append($("<span>", {
+    "class": "carousel-control-next-icon",
+    "aria-hidden": "true"
+  }))
+  carouselNext.append($("<span>", {
+    "class": "sr-only",
+    html: "Next"
+  }))
 
   let carouselInner = $("<div>", {
     "class": "carousel-inner"
@@ -76,8 +90,8 @@ function createCarousel(carouselItems) {
   carouselInner.append(carouselItems);
 
   carousel.append(carouselInner);
-  carousel.append(carouselLeft);
-  carousel.append(carouselRight);
+  carousel.append(carouselPrev);
+  carousel.append(carouselNext);
 
   return carousel;
 }
