@@ -22,12 +22,64 @@ function createAdCard(ad) {
 }
 
 function createAdCardImages(ad) {
-  let $image = $("<img>", {
-    "class": "card-img-top",
-    src: ad.image
+  let carouselItems = [];
+  for (let i=0; i < ad.images.length; i++) {
+    carouselItems.push(createCarouselItem(ad.images[i], i==0));
+  }
+  return createCarousel(carouselItems);
+}
+
+function createCarouselItem(imageSource, isFirst) {
+  classes = "carousel-item";
+  if (isFirst) {
+    classes += " active";
+  }
+  let $item = $("<div>", {
+    "class": classes
   })
 
-  return $image;
+  $item.append($("<img>", {
+    "class": "d-block w-100",
+    src: imageSource
+  }))
+
+  return $item;
+}
+
+function createCarousel(carouselItems) {
+  let carouselId = Math.random().toString(36).slice(2);
+  let carousel = $("<div>", {
+    "class": "carousel slide",
+    "data-ride": "carousel",
+    id: carouselId,
+  })
+
+  let carouselLeft = $("<a>", {
+    "class": "carousel-control-prev",
+    role: "button",
+    "data-slide": "prev",
+    href: "#"+carouselId,
+    html: '<span class="carousel-control-prev-icon" aria-hidden: "true"></span><span class="sr-only">Previous</span>'
+  })
+
+  let carouselRight = $("<a>", {
+    "class": "carousel-control-next",
+    role: "button",
+    "data-slide": "next",
+    href: "#"+carouselId,
+    html: '<span class="carousel-control-next-icon" aria-hidden: "true"></span><span class="sr-only">Next</span>'
+  })
+
+  let carouselInner = $("<div>", {
+    "class": "carousel-inner"
+  })
+  carouselInner.append(carouselItems);
+
+  carousel.append(carouselInner);
+  carousel.append(carouselLeft);
+  carousel.append(carouselRight);
+
+  return carousel;
 }
 
 function createAdCardContent(ad) {
@@ -53,12 +105,15 @@ function createAdCardContent(ad) {
   return [$title, $description, $date, $seePost]
 }
 
+
+
+
 let ad1 = {
   "title": "Title 1",
   "description": "My Description",
   "date": "Some Date",
-  "image": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
-  "images": [],
+  "images": ["https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg",
+            "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"],
   "attributes": {},
   "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
 }
@@ -67,8 +122,8 @@ let ad2 = {
   "title": "Title 2",
   "description": "My Other Description",
   "date": "Some Other Date",
-  "image": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
-  "images": [],
+  "images": ["https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png",
+            "https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg"],
   "attributes": {},
   "url": "https://www.google.com/logos/doodles/2019/celebrating-sojourner-truth-5641167843622912.6-l.png"
 }
