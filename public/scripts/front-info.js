@@ -1,16 +1,19 @@
 $(document).ready(function() {
   $('#upload').submit(function () {
     var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
 
     reader.onloadend = function () {
       imageUrl = reader.result;
-      $('#upload')[0].reset(); // Reset form inputs
     }
 
     if (file) {
       reader.readAsDataURL(file);
-      console.log("VALID FILE");
+      // IDEA: SEND TO POST
+      console.log(reader)
     }
+
+
 
     return false; // Disable default form functionality
   });
