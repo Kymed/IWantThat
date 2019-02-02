@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 });
 
 // Import vision
-var vision = vision = require('@google-cloud/vision');
+var vision = require('@google-cloud/vision');
 var visionClient = new vision.ImageAnnotatorClient();
 
 // post request for image
@@ -76,7 +76,7 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
 
         res.render('labels', {labels: labelNames});
 
-        
+
         }).catch(err => {
             console.error("ERROR: ", err);
         })
