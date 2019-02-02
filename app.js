@@ -22,10 +22,5 @@ mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iw
 });
 var db = mongoose.connection;
 
-// home test route
-app.get('/', (req, res) => {
-  res.render('home');
-})
-
 // start server
 app.listen(3000, () => console.log("listening"));
