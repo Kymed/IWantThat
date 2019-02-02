@@ -2,15 +2,49 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Labels</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      .btn-label{
+        margin: 10px;
+      }
+
+      .tags{
+        float:right;
+      }
+    </style>
+
   </head>
   <body>
-    <form id="labels" method="post">
-          <h1>Results</h1>
 
-      <% for (i = 0; i < labels.length; i++) { %>
-        <p> <%= labels[i] %> </p>
-      <% } %>
-    </form>
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="jumbotron">
+          <div class="col-md-4 col-sm-4">
+            <h1 class="display-3">Results</h1>
+            <p class="lead">Cras justo odio, dapibus ac facilisis in,</p>
+          </div>
+
+          <div class="col-md-8 col-sm-8 tags" align="right">
+            <form id="labels" method="post">
+              <% for (i = 0; i < labels.length; i++) { %>
+
+                  <button type="button" name="button"
+                   class="btn btn-secondary btn-large btn-label">
+                   <%= labels[i] %></button>
+
+              <% } %>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

@@ -10,7 +10,11 @@ $(document).ready(function() {
     if (file) {
       reader.readAsDataURL(file);
       // IDEA: SEND TO POST
+
+      var result = reader.result;
+      console.log(result);
       console.log(reader);
+
     }
 
 
