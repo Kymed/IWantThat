@@ -2,6 +2,7 @@ function displayAds(ads) {
   for (let i=0; i < ads.length; i++) {
     let adCard = createAdCard(ads[i]);
     $("#results").append(adCard);
+  }
 }
 
 function createAdCard(ad) {
@@ -12,9 +13,10 @@ function createAdCard(ad) {
   let $adCardBody = $("<div>", {
     "class": "card-body"
   })
-  $adCard.append($adCardBody);
+
   $adCard.append(createAdCardImages(ad));
   $adCardBody.append(createAdCardContent(ad));
+  $adCard.append($adCardBody);
 
   return $adCard;
 }
@@ -25,7 +27,7 @@ function createAdCardImages(ad) {
     src: ad.image
   })
 
-  return image;
+  return $image;
 }
 
 function createAdCardContent(ad) {
@@ -50,3 +52,5 @@ function createAdCardContent(ad) {
 
   return [$title, $description, $date, $seePost]
 }
+
+model.exports = displayAds;
