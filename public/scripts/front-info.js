@@ -1,14 +1,16 @@
 $(document).ready(function() {
-  var file = document.querySelector('input[type=file]').files[0];
-  var reader  = new FileReader();
+  $('#upload').submit(function () {
+    var file = document.querySelector('input[type=file]').files[0];
 
-  reader.onloadend = function() {
-    imageUrl = reader.result;
-  }
+    reader.onloadend = function () {
+      imageUrl = reader.result;
+      $('#upload')[0].reset(); // Reset form inputs
+    }
 
-  if (file) {
-    ready.readAsDataURL(files);
-  }
+    if (file) {
+      reader.readAsDataURL(file);
+    }
 
-  return false;
+    return false; // Disable default form functionality
+  });
 });
