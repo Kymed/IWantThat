@@ -3,12 +3,17 @@
   color: black;
 }
 
-.jumbotron {
+#home-background {
   background-image: url("/images/animals.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom-center;
   padding: 5rem 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .logo {
@@ -30,11 +35,6 @@
 .subtitle {
   margin: 10px;
   font-size: 30px;
-}
-
-#mainRegionSelecter{
-  margin-top: 20px;
-  width: 300px;
 }
 
 .colored-body {
