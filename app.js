@@ -78,9 +78,21 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         res.render('labels', {labels: labelNames});
 
 
+
         }).catch(err => {
             console.error("ERROR: ", err);
         })
+
+         console.log("deleting file");
+
+        fs.unlink(imgPath, (err) => {
+        if (err) {
+            console.log("failed to delete local image:"+err);
+        } else {
+            console.log('successfully deleted local image');                                
+        }
+    });
+
         } else {
             res.send('file not uploaded');
         }
@@ -94,6 +106,7 @@ app.post('/scrape', (req, res) => {
         console.log(result);
         res.render('results.ejs', {results: result})
         console.log("finished scraping");
+
     }).catch(err => console.error(err));
 });
 
