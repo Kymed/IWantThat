@@ -18,14 +18,15 @@
 
 <body class="colored-body">
   <h1 class="results-title">Results</h1>
-  <a title="Return to the home page" href="/" class="logo"><img src="/images/logo.png"></img></a>
+  <a title="Return to the home page" href="/"><img src="/images/logo.png" class="logo"></img></a>
   <div id="results" class="col-sm-4 offset-4">
   <% for (i = 0; i < results.length; i++) { %>
+    <% let carouselId = Math.random().toString(36).slice(2); %>
     <div class="card">
-      <div class="carousel slide" data-ride="carousel" id="<%= i %>">
+      <div class="carousel slide" data-ride="carousel" id="<%= carouselId %>">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100 carousel-image" src="<%= results[i].images[0] %>">
+            <img class="d-block carousel-image" src="<%= results[i].images[0] %>">
           </div>
           <% if (results[i].images.length > 1) { %>
             <% for (n = 1; n < results[i].images.length; n++) { %>
@@ -33,10 +34,10 @@
               <img class="d-block w-100 carousel-image" src="<%= results[i].images[n] %>">
             </div>
             <% } %>
-            <a class="carousel-control-prev" role="button" data-slide="prev" href="#<%= i %>">
+            <a class="carousel-control-prev" role="button" data-slide="prev" href="#<%= carouselId %>">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span></a>
-            <a class="carousel-control-next" role="button" data-slide="next" href="#<%= i %>">
+            <a class="carousel-control-next" role="button" data-slide="next" href="#<%= carouselId %>">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span></a>
           <% } %>

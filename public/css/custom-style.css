@@ -71,10 +71,17 @@
 
 .carousel-image {
   object-fit: contain;
+  height: 300px;
+  width: auto;
+  min-width: 100%;
 }
 
 .price {
   color: green;
+}
+
+#results {
+  margin-top: 16px;
 }
 
 /* Extend Bootstrap cards */
