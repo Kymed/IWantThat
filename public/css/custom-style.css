@@ -1,7 +1,3 @@
-.price {
-  color: green;
-}
-
 .jumbotron {
   background-image: url("http://lorempixel.com/1600/600/city");
   background-size: cover;
@@ -9,6 +5,13 @@
   background-position: bottom-center;
   padding: 5rem 0;
 }
+
+.logo {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
 .mastinfo{
   background-color: rgba(255,255,255,0.85);
   padding: 2rem;
@@ -35,6 +38,14 @@
 
 .results-title {
   color: white;
+}
+
+.carousel-image {
+  object-fit: contain;
+}
+
+.price {
+  color: green;
 }
 
 /* Extend Bootstrap cards */
