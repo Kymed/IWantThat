@@ -1,14 +1,27 @@
-.price {
-  color: green;
+.results-title {
+  font-size: 4rem;
+  color: black;
 }
 
-.jumbotron {
-  background-image: url("http://lorempixel.com/1600/600/city");
+#home-background {
+  background-image: url("/images/animals.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom-center;
   padding: 5rem 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
+
+.logo {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
 .mastinfo{
   background-color: rgba(255,255,255,0.85);
   padding: 2rem;
@@ -24,15 +37,50 @@
   font-size: 30px;
 }
 
-#mainRegionSelecter{
-  margin-top: 20px;
-  width: 300px;
+.colored-body {
+  background-color: #c5eff7;
+}
+
+.jumbotron {
+  background-color: rgba(0,0,0,0);
+}
+
+.results-title {
+  color: white;
+  text-align: center;
+}
+
+.carousel-image {
+  object-fit: contain;
+  height: 300px;
+  width: auto;
+  min-width: 100%;
+}
+
+#min-chooser {
+ float: left;
+ text-align: left;
+ margin-bottom: 16px;
+}
+
+#max-chooser {
+ float: right;
+ text-align: right;
+ margin-bottom: 16px;
+}
+
+.price {
+  color: green;
+}
+
+#results {
+  margin-top: 16px;
 }
 
 /* Extend Bootstrap cards */
 .card {
   margin-bottom: 16px;
-  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.15)
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.15);
 }
 
 .card-body {

@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Labels</title>
+ <head>
+   <meta charset="utf-8">
+   <title>Labels</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-    <style media="screen">
-      .btn-label{
-        margin: 10px;
-      }
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="/css/custom-style.css">
 
-      .tags{
-        float:right;
-      }
-    </style>
+   <style media="screen">
+     .btn-label{
+       margin: 10px;
+     }
 
-  </head>
-  <body>
+     .tags{
+       float:right;
+     }
+   </style>
+ </head>
 
-    <div class="container">
-      <div class="row justify-content-center">
-
-        <div class="jumbotron">
-          <div class="col-md-4 col-sm-4">
-            <h1 class="display-3">Results</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in,</p>
-          </div>
-
-          <div class="col-md-8 col-sm-8 tags" align="right">
-            <form id="labels" method="post">
-              <% for (i = 0; i < labels.length; i++) { %>
-
-                  <button type="button" name="button"
-                   class="btn btn-secondary btn-large btn-label">
-                   <%= labels[i] %></button>
-
-              <% } %>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </body>
+ <body class="colored-body">
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="jumbotron">
+           <div class="row justify-content-center">
+             <div class="col-md-12 col-sm-12">
+               <h1 class="display-3 text-center"> <b>Detected Breeds</b> </h1>
+               <p class="lead text-center">Please select the appropriate breed</p>
+             </div>
+           </div>
+           <div class="row justify-content-center">
+             <form id="labels" action="/scrape" method="post">
+               <div class="row">
+                 <div class="col-md-6 col-sm-6 tags">
+                   <p id="min-chooser">Minimum Price:</p><br>
+                   <input id="min-chooser" type="number" name="minprice" value="250"><br>
+                 </div>
+                 <div class="col-md-6 col-sm-6 tags">
+                   <p id="max-chooser">Maximum Price:</p><br>
+                   <input id="max-chooser" type="number" name="maxprice" value="1250"><br>
+                 </div>
+               </div>
+               <div class="row">
+                 <div style="margin-left: auto; margin-right: auto;">
+                   <% for (i = 0; i < labels.length; i++) { %>
+                       <input id="labelOptions" type="radio" name="label" value="<%= labels[i] %>"> <%=labels[i]%></input><br>
+                       <div style="clear:both;"></div>
+                   <% } %>
+                   <br>
+                   <input type="submit" class="btn btn-primary" style="width:100%;" value="submit">
+                   <div style="clear:both;"></div>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+ </body>
 </html>
