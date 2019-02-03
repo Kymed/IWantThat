@@ -8,7 +8,7 @@
   <title>Main</title>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../public/css/custom-style.css">
+  <link rel="stylesheet" href="../css/custom-style.css">
 
   <!-- bootstrap, jquery, js styling references -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -17,7 +17,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
   <!-- Custom js -->
-  <script type="text/javascript" src="../public/scripts/front-info.js"></script>
+  <script type="text/javascript" src="../scripts/front-info.js"></script>
 
 </head>
 
@@ -65,17 +65,17 @@
 
   <section class="jumbotron">  <!-- Adds styling to class -->
     <div class="container mastinfo">    <!-- Puts all text in a container -->
-      <img src="../public/img/logo.png" id="logo" style="width:20%; margin-left: 40%; margin-right: 40%;">
+      <img src="../images/logo.png" class="logo">
       <div class="display-2 text-center">
         I Want That
       </div>
-      <p class="text-dar text-dark text-center subtitle">Search the Greater Toronto Area</p>
+      <p class="text-dar text-dark text-center subtitle">Identify Animal Breeds & Find People Selling Pets!</p>
 
       <div class="row">
         <div class="col text-center">
 
-          <form id="upload" method="post">
-            <input name="image" type="file" enctype="multipart/form-data" required>
+          <form id="upload" action="./uploadImage" enctype="multipart/form-data" method="POST">
+            <input name="image" type="file" required>
             <br>
             <input type="submit" value="Upload" class="btn btn-primary btn-large btn-up">
             <div style="clear:both;"></div>

@@ -27,19 +27,23 @@
 
         <div class="jumbotron">
           <div class="col-md-4 col-sm-4">
-            <h1 class="display-3">Results</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in,</p>
+            <h1 class="display-3">Detected Breeds</h1>
+            <p class="lead">Please select an appropriate breed and ignore other labels</p>
           </div>
 
           <div class="col-md-8 col-sm-8 tags" align="right">
-            <form id="labels" method="post">
+            <form id="labels" action="/scrape" method="post">
+              Minimum Price:<br>
+              <input type="number" name="minprice" value="500"><br>
+              Maximum Price:<br>
+              <input type="number" name="maxprice" value="1250"><br>
+
               <% for (i = 0; i < labels.length; i++) { %>
 
-                  <button type="button" name="button"
-                   class="btn btn-secondary btn-large btn-label">
-                   <%= labels[i] %></button>
+                   <input type="radio" name="label" value="<%= labels[i] %>"><%=labels[i]%></input><br>
 
               <% } %>
+              <input type="submit" value="submit">
             </form>
           </div>
         </div>
