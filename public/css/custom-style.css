@@ -41,6 +41,10 @@
   background-color: #c5eff7;
 }
 
+.jumbotron {
+  background-color: rgba(0,0,0,0);
+}
+
 .results-title {
   color: white;
   text-align: center;
@@ -51,6 +55,18 @@
   height: 300px;
   width: auto;
   min-width: 100%;
+}
+
+#min-chooser {
+ float: left;
+ text-align: left;
+ margin-bottom: 16px;
+}
+
+#max-chooser {
+ float: right;
+ text-align: right;
+ margin-bottom: 16px;
 }
 
 .price {
