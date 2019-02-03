@@ -48,6 +48,9 @@
 
 .carousel-image {
   object-fit: contain;
+  height: 300px;
+  width: auto;
+  min-width: 100%;
 }
 
 .price {
