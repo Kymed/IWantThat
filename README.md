@@ -18,3 +18,6 @@ UI/UX Designer: [Eduard Varshavsky](https://github.com/EduardVar) (Queen's 2022)
 
 A slide show about our application:
 https://docs.google.com/presentation/d/1WpyL1Fy4kkmTFYfPnZ9Vk6Fp1tv71IPt4OFoM4Xrl_I/edit?usp=sharing
+
+Come try it! :D
+https://i-want-that-animal.herokuapp.com/
