@@ -61,14 +61,15 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         visionClient.labelDetection(imgPath).then(results => {
 
         const labels=results[0].labelAnnotations;
-        let ignoreLabels = ["Companion Dog", "Carnivore", "Snout", "Canidae",
+        let ignoreLabels = ["Companion dog", "Carnivore", "Snout", "Canidae",
         "Dog breed", "Vertebrate", "Mammal", "Canidae", "Black", "Maroon", "Green", "Olive",
         "Navy", "Purple", "Teal", "Silver", "Gray", "Red", "Lime", "Yellow",
-        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds"];
+        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds", "Dog", "Cat", "Felidae",
+        "Small to medium-sized cats", "Kitten", "Whiskers", "Domestic short-haired cat", "Grass", "Eye"];
 
         labels.forEach(label => {
 
-            if (!ignoreLabels.includes(label.description)) {
+            if (!(ignoreLabels.indexOf(label.description) > -1)) {
                 labelNames.push(label.description);
             };
 
