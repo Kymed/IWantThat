@@ -4,12 +4,35 @@
 }
 
 .jumbotron {
-  background-image: url("/images/animals.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom-center;
   padding: 5rem 0;
 }
+#indexJumbo {
+  background-image: url("/images/animals.jpg");
+}
+#labelsJumbo {
+  padding: 20px;
+}
+
+#minChooser {
+  float: left;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+#maxChooser {
+  float: right;
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+#labelOptions {
+  margin: 10px;
+}
+
+
 
 .logo {
   width: 20%;

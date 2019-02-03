@@ -23,31 +23,42 @@
     </style>
 
   </head>
-  <body class="results-body">
+  <body class="colored-body">
 
     <div class="container">
       <div class="row justify-content-center">
-
-        <div class="jumbotron">
-          <div class="col-md-4 col-sm-4">
-            <h1 class="display-3">Detected Breeds</h1>
-            <p class="lead">Please select an appropriate breed and ignore other labels</p>
+        <div class="jumbotron" id="labelsJumbo">
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-sm-12">
+              <h1 class="display-3 text-center"> <b>Detected Breeds</b> </h1>
+              <p class="lead">Please select an appropriate breed and ignore other labels</p>
+            </div>
           </div>
-
-          <div class="col-md-8 col-sm-8 tags" align="right">
+          <div class="row justify-content-center">
             <form id="labels" action="/scrape" method="post">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 tags">
+                  <p id="minChooser">Minimum Price:</p><br>
+                  <input id= minChooser type="number" name="minprice" value="0"><br>
+                </div>
+                <div class="col-md-6 col-sm-6 tags">
+                  <p id="maxChooser">Maximum Price:</p><br>
+                  <input id="maxChooser" type="number" name="maxprice" value="1250"><br>
+                </div>
+              </div>
+              <div class="row">
+                <div style="margin-left: auto; margin-right: auto;">
+                  <% for (i = 0; i < labels.length; i++) { %>
+                      <input id="labelOptions" type="radio" name="label" value="<%= labels[i] %>"><%=labels[i]%></input><br>
+                      <div style="clear:both;"></div>
+                  <% } %>
+                  <br>
+                  <input type="submit" class="btn btn-primary" style="width:100%;" value="submit">
+                  <div style="clear:both;"></div>
+                </div>
+              </div>
 
-              <p >Minimum Price:</p><br>
-              <input type="number" name="minprice" value="500"><br>
-              <p>Maximum Price:</p><br>
-              <input type="number" name="maxprice" value="1250"><br>
 
-              <% for (i = 0; i < labels.length; i++) { %>
-
-                   <input type="radio" name="label" value="<%= labels[i] %>"><%=labels[i]%></input><br>
-
-              <% } %>
-              <input type="submit" value="submit">
             </form>
           </div>
         </div>
