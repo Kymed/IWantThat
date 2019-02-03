@@ -17,8 +17,8 @@
 </head>
 
 <body class="results-body">
-  <h1>Results</h1>
-  <div id="results" class="col-sm-6 offset-3">
+  <h1 class="results-title">Results</h1>
+  <div id="results" class="col-sm-4 offset-4">
   <% for (i = 0; i < results.length; i++) { %>
     <div class="card">
       <div class="carousel slide" data-ride="carousel" id="<%= i %>">
@@ -41,7 +41,7 @@
       </div>
       <div class="card-body">
         <h4 class="card-title"><%= results[i].title %></h4>
-        <p class="card-text price">Price: $<%= results[i].price %></p>
+        <p class="card-text price">Price: $<%= results[i].attributes.price %></p>
         <a href="<%= results[i].url %>">
           <button class="btn btn-primary">See Post on Kajiji</button>
         </a>
