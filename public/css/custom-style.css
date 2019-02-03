@@ -54,6 +54,10 @@
   color: green;
 }
 
+#results {
+  margin-top: 16px;
+}
+
 /* Extend Bootstrap cards */
 .card {
   margin-bottom: 16px;
