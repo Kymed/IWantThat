@@ -64,7 +64,8 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         let ignoreLabels = ["Companion Dog", "Carnivore", "Snout", "Canidae",
         "Dog breed", "Vertebrate", "Mammal", "Canidae", "Black", "Maroon", "Green", "Olive",
         "Navy", "Purple", "Teal", "Silver", "Gray", "Red", "Lime", "Yellow",
-        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds", "Dog"];
+        "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds", "Dog", "Whiskers", "Grass",
+        "Wildlife", "Terrestrial Animal"];
 
         labels.forEach(label => {
 
