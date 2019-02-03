@@ -3,12 +3,17 @@
   color: black;
 }
 
-.jumbotron {
+#home-background {
   background-image: url("/images/animals.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom-center;
   padding: 5rem 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .logo {
@@ -32,13 +37,12 @@
   font-size: 30px;
 }
 
-#mainRegionSelecter{
-  margin-top: 20px;
-  width: 300px;
-}
-
 .colored-body {
   background-color: #c5eff7;
+}
+
+.jumbotron {
+  background-color: rgba(0,0,0,0);
 }
 
 .results-title {
@@ -51,6 +55,18 @@
   height: 300px;
   width: auto;
   min-width: 100%;
+}
+
+#min-chooser {
+ float: left;
+ text-align: left;
+ margin-bottom: 16px;
+}
+
+#max-chooser {
+ float: right;
+ text-align: right;
+ margin-bottom: 16px;
 }
 
 .price {
