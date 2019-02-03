@@ -27,19 +27,33 @@ let params = {
     maxPrice: 2000,
 };
 
+function check_wanted(title){
+
+    var want_1 = "wanted";
+    var want_2 = "Wanted";
+    var want_3 = "WANT";
+    var want_4 = "WANTED";
+    var want_5 = "Want";
+ 
+    if(title.includes(want_1) || title.includes(want_2) || title.includes(want_3) || title.includes(want_4) || title.includes(want_5)){
+        return false;
+    }
+    return true;
+}
+
 // Scrape using optional callback parameter
 function callback(err, ads) {
     if (!err) {
         // Use the ads array https://www.kijiji.ca/v-cars-trucks/ottawa/lease-take-over-mercedes-benz-cla/1411235322
         for (let i = 0; i < ads.length; ++i) {
-            if(ads[i].attributes["type"] == "OFFER"){
+            if(ads[i].attributes["type"] == "OFFER" && check_wanted(ads[i].title)){
                 var res = {
                 "title": ads[i].title,
                 "url" : ads[i].url,
                 "price":  ads[i].attributes["price"],
                 "images": ads[i].images,
                 }
-                console.log(res);
+                //console.log(res);
             }
         }
     }
