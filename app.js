@@ -1,5 +1,4 @@
 var express = require('express'),
-    mongoose = require('mongoose'),
     bodyParser = require('body-parser');
     path = require('path');
     multer = require('multer');
@@ -19,12 +18,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// configure database
-mongoose.connect('mongodb://kymed:iwantthatqhacks2019@ds041992.mlab.com:41992/iwantthat', {
-    useNewUrlParser: true
-});
-var db = mongoose.connection;
-
 //configure multer
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -39,8 +32,7 @@ var upload = multer({
     storage: storage
 });
 
-// Import controllers
-var vision = require('./controllers/visionController');
+// Import controller
 var scraper = require('./controllers/kijiji_scrape');
 
 // home test route
