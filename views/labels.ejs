@@ -9,6 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom-style.css">
+
     <style media="screen">
       .btn-label{
         margin: 10px;
@@ -20,7 +23,7 @@
     </style>
 
   </head>
-  <body>
+  <body class="results-body">
 
     <div class="container">
       <div class="row justify-content-center">
@@ -33,9 +36,10 @@
 
           <div class="col-md-8 col-sm-8 tags" align="right">
             <form id="labels" action="/scrape" method="post">
-              Minimum Price:<br>
+
+              <p >Minimum Price:</p><br>
               <input type="number" name="minprice" value="500"><br>
-              Maximum Price:<br>
+              <p>Maximum Price:</p><br>
               <input type="number" name="maxprice" value="1250"><br>
 
               <% for (i = 0; i < labels.length; i++) { %>
