@@ -65,7 +65,8 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         "Dog breed", "Vertebrate", "Mammal", "Canidae", "Black", "Maroon", "Green", "Olive",
         "Navy", "Purple", "Teal", "Silver", "Gray", "Red", "Lime", "Yellow",
         "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds", "Dog", "Cat", "Felidae",
-        "Small to medium-sized cats", "Kitten", "Whiskers", "Domestic short-haired cat", "Grass", "Eye"];
+        "Small to medium-sized cats", "Kitten", "Whiskers", "Domestic short-haired cat", "Grass", "Eye",
+        "Whiskers", "Grass", "Wildlife", "Terrestrial Animal"];
 
         labels.forEach(label => {
 
@@ -78,9 +79,21 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         res.render('labels', {labels: labelNames});
 
 
+
         }).catch(err => {
             console.error("ERROR: ", err);
         })
+
+         console.log("deleting file");
+
+        fs.unlink(imgPath, (err) => {
+        if (err) {
+            console.log("failed to delete local image:"+err);
+        } else {
+            console.log('successfully deleted local image');                                
+        }
+    });
+
         } else {
             res.send('file not uploaded');
         }
@@ -94,6 +107,7 @@ app.post('/scrape', (req, res) => {
         console.log(result);
         res.render('results.ejs', {results: result})
         console.log("finished scraping");
+
     }).catch(err => console.error(err));
 });
 
