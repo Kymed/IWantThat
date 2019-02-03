@@ -66,7 +66,7 @@ app.post('/uploadImage', upload.single('image'), (req, res) => {
         "Navy", "Purple", "Teal", "Silver", "Gray", "Red", "Lime", "Yellow",
         "Blue", "Fuchsia", "Aqua", "White", "Ancient dog breeds", "Dog", "Cat", "Felidae",
         "Small to medium-sized cats", "Kitten", "Whiskers", "Domestic short-haired cat", "Grass", "Eye",
-        "Whiskers", "Grass", "Wildlife", "Terrestrial Animal", "Nose", "Eye", "Animal"];
+        "Whiskers", "Grass", "Wildlife", "Terrestrial Animal", "Nose", "Eye", "Animal", "Tail", "Paw"];
 
         labels.forEach(label => {
 
