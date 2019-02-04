@@ -16,6 +16,9 @@ Backend Engineer: [Fangyu Wu](https://github.com/WuFangyu) (Waterloo 2021)
 UI/UX Designer: [Eduard Varshavsky](https://github.com/EduardVar) (Queen's 2022)
 
 
+Error: The app crashes if kijiji returns no results for a certain breed, passing an empty object into the "results" view, and crashing the app. I learned this after devpost was due, but didnt deploy a fix to follow hackathon rules -Kyle
+
+
 A slide show about our application:
 https://docs.google.com/presentation/d/1WpyL1Fy4kkmTFYfPnZ9Vk6Fp1tv71IPt4OFoM4Xrl_I/edit?usp=sharing
 
